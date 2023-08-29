@@ -90,3 +90,28 @@ class에서 변수나 property를 선언할 때는 타입을 지정해준다.
 
 ### Final  Variables
 
+- var대신 final로 변수를 만들게 되면 이 변수는 수정할 수 없게 된다.
+  자바스크립트의 const랑 비슷하다.
+
+### Late Variables
+
+- 초기 데이터 없이 먼저 변수를 생성하고 추후에 데이터를 넣을 때 주로 사용한다.
+  flutter로 data fecthing을 할 때 유용하다.
+  late 변수를 만들고, API에 요청을 보낸 뒤에 API에서 값을 보내주면 그 응답값을 late변수에 넣어 사용할 수 있다.
+
+```dart
+void main() {
+late final String name;
+
+print(name); // name 변수에 접근 불가
+}
+```
+
+### Constant Variables
+
+- dart에서 const는 compile-time constant를 만들어준다.
+  const는 컴파일할 때 알고 있는 값을 사용해야 한다.
+  만약 어떤 값인지 모르고, 그 값이 API로부터 오거나 사용자가 화면에서 입력해야 하는 값이라면 그건 const가 아닌 final이나 var가 되어야 한다.
+- const: 컴파일 시점에 바뀌지 않는 값 (상수)
+  final: 컴파일 시점에 바뀌는 값 (API에서 받아온 값, 사용자 입력값)
+
