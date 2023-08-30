@@ -115,3 +115,118 @@ print(name); // name 변수에 접근 불가
 - const: 컴파일 시점에 바뀌지 않는 값 (상수)
   final: 컴파일 시점에 바뀌는 값 (API에서 받아온 값, 사용자 입력값)
 
+## 데이터타입
+
+### 기본
+
+- 아래 타입을 포함한 거의 대부분의 타입들이 객체로 이루어져 있다. (함수도 객체)
+  이것이 Dart가 진정한 객체 지향 언어로 불리는 이유.
+
+  ```DART
+  void main() {
+      String name = "tom";
+      bool isPlay = true;
+      int age = 10;
+      double money = 52.55;
+      num x = 12;
+      num y = 1.2;
+  }
+  ```
+
+### Lists
+
+- List 선언 두가지
+
+  ```dart
+  void main(){
+      int case1 = [1,2,3,4,5];
+      List case2 = [1,2,3,4,5];
+  }
+  ```
+
+- dart는 `collection if`와 `collection for`을 지원
+
+  ```dart
+  void main(){
+      var giveMeSix = true;
+      int case1 = [
+      1,
+      2,
+      3,
+      4,
+      5,
+      if(giveMeSix) 6, // 이런 문법이 가능
+  ];
+  ```
+
+  
+
+### String Interpolation
+
+- 변수 사용법
+
+- $달러 기호를 붙이고 사용할 변수를 적어주면 된다.
+  만약 무언가를 계산하고 싶다면 ${ } 형태로 적어주면 된다.
+
+  ```dart
+  void main(){
+      var name = "tom";
+      var age = 10;
+      var greeting = "hello $name, I'm ${age + 5}";
+  }
+  ```
+
+  
+
+### Collection For
+
+- Dart는 조건문(if) 및 반복(for)을 사용하여 컬렉션을 구축하는 데 사용할 수 있는 컬렉션 if 및 컬렉션 for도 제공
+
+  ```dart
+  void main() {
+      var oldFriends = ["nico", "lynn"];
+      var newFriends = [
+      "tom",
+      "jon",
+      for (var friend in oldFriends) "❤️ $friend"
+      ];
+  
+      print(newFriends); // [tom, jon, ❤️ nico, ❤️ lynn]
+  }
+  ```
+
+  
+
+### Maps
+
+- Dart에서 Object는 TypeScripts의 any와 같다
+
+- 맵은 key와 value를 연결하는 객체
+
+  ```dart
+  var gifts = {
+      // Key: Value
+      'first': 'partridge',
+      'second': 'turtledoves',
+      'fifth': 'golden rings'
+      };
+  
+      // Map 생성자를 사용하여 동일한 객체를 만들 수 있음
+      var gifts2 = Map();
+      gifts2['first'] = 'partridge';
+      gifts2['second'] = 'turtledoves';
+      gifts2['fifth'] = 'golden rings';
+  }
+  // 이런식으로 타입지정해서 만들수도있음
+  Map<String, bool> players = {
+      "han": true,
+      "sang": false,
+  }
+  ```
+
+  
+
+### Sets
+
+- 파이썬의 Set과 같다
+- 모든 요소가 유니크하다
