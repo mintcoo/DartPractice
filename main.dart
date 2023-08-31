@@ -1,6 +1,8 @@
+String hello(String name) => "hello $name zz";
+
+
 void main() {
-  print("hello world");
-  late final name;
-  name = "nico";
-  print(name);
+  String newName = hello("han");
+  print(newName);
+  
 }

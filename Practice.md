@@ -230,3 +230,16 @@ print(name); // name 변수에 접근 불가
 
 - 파이썬의 Set과 같다
 - 모든 요소가 유니크하다
+
+## Functions
+
+### 정의
+
+```dart
+String hello(String name) {
+  return "hello $name zz";
+}
+String hello2(String name) => "hello $name zz";
+// 한줄짜리는 이렇게 축약가능
+```
+
