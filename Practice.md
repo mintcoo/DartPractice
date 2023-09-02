@@ -243,3 +243,35 @@ String hello2(String name) => "hello $name zz";
 // 한줄짜리는 이렇게 축약가능
 ```
 
+### Named Parameters
+
+- {} 중괄호안에 넣어준다
+
+- 두가지 방법 존재
+
+- 기본값을 제공하거나 required를 달거나
+
+  ```dart
+  // 기본값 제공시에는 함수 인자 없어도 기본값으로 대체
+  String sayHello(
+  {String name = "nico", 
+   int age = 99, 
+   String country = "Korea"}) {
+  return "${name} / ${age} / ${country}";
+  }
+  
+  // required 붙이면 함수 인자없이 호출하면 에러마크생김
+  String sayHello(
+  {required String name, 
+   required int age, 
+   required String country}) {
+  return "${name} / ${age} / ${country}";
+  }
+  
+  void main() {
+      print(sayHello(name: "sugar", age: 10, country: "Korea"));
+  }
+  
+  ```
+
+  
