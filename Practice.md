@@ -274,4 +274,14 @@ String hello2(String name) => "hello $name zz";
   
   ```
 
-  
+
+### Optional Positional Parameters
+
+```dart
+String sayHello(String name, int age, [String? country = ""]
+                // 여기가 중요 []안에 적으면서 ?와 default값
+) {
+	return 'Hello ${name}, You are ${age} from the ${country}';
+}
+```
+
