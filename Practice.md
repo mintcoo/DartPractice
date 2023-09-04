@@ -285,3 +285,43 @@ String sayHello(String name, int age, [String? country = ""]
 }
 ```
 
+### ?? 연산자
+
+- 왼쪽 값이 null인지 체크해서 null이 아니면 왼쪽 값을 리턴하고 null이면 오른쪽 값을 리턴
+
+  ```dart
+  String capitalizeName(String? name) {
+  	return name?.toUpperCase() ?? "han";
+  }
+  ```
+
+  
+
+- ??= 연산자를 이용하면 변수 안에 값이 null일 때를 체크해서 값을 할당해줄 수 있다
+
+  ```dart
+  void main() {
+      String? name;
+      name ??= "nico";
+      name = null;
+      name ??= "han";
+      print(name); // han
+  }
+  ```
+
+  
+
+### TypeDef
+
+- 자료형에 원하는 alias 별명을 붙일 수 있음
+
+  ```dart
+  typedef ListOfInts = List;
+  
+  ListOfInts reverseListOfNumbers(ListOfInts list) {
+      var reversedList = list.reversed.toList();
+      return reversedList;
+  }
+  ```
+
+  
