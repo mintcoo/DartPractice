@@ -325,3 +325,82 @@ String sayHello(String name, int age, [String? country = ""]
   ```
 
   
+
+## Class
+
+- dart 클래스에서 property를 선언할 때는 타입을 사용해서 정의
+
+  ```dart
+  class Player {
+      final String name = 'jisoung';
+      // final 붙이면 수정할 수 없게 된다
+      final int age = 17;
+      void sayName(){
+      // class method안에서는 this를 쓰지 않는 것을 권장한다.
+      print("Hi my name is $name")
+      }
+  }
+  
+  void main(){
+      // new를 꼭 붙이지 않아도 된다.
+      var player =Player();
+  }
+  ```
+
+  
+
+### Constructors
+
+- dart에서 생성자(constructor) 함수는 클래스 이름과 같아야 한다
+
+  ```dart
+  class Player {
+      // 이럴 때 late를 사용한다.
+      late final String name;
+      late final int age;
+      // 클래스 이름과 같아야한다!
+      Player(String name, int xp){
+      this.name = name;
+      this.xp = xp
+      
+      // late를 지우고 아래처럼 한줄로 바꿀수있따
+      Player(this.name, this.age);
+      }
+  }
+  
+  void main(){
+  // Player 클래스의 인스턴스 생성!
+  var player = Player("jisoung", 1500);
+      
+  
+  ```
+
+  
+
+### Named Constructor Parameters
+
+- 위에 positional (클래스가 커지고 property가 많아지면 헷갈림) 말고 함수처럼 name으로
+
+  ```dart
+  class Player {
+      final String name;
+      int age;
+      String description;
+  
+      Player({
+          required this.name,
+          required this.age,
+          required this.description,
+      });
+  }
+  void main(){
+  // 한 눈에 볼 수 있다.
+      var player = Player(
+      name: "jisoung",
+      age: 17,
+      description: "Happy coding is end coding"
+      }
+  }
+  ```
+
+  
