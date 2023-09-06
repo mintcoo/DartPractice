@@ -404,3 +404,52 @@ String sayHello(String name, int age, [String? country = ""]
   ```
 
   
+
+### Named Constructor
+
+- 편의 문법이 존재
+
+  ```dart
+  ✅ Named parameters
+  // 일반적인 방법
+  Player.createBlue({
+      required String name,
+      required int xp
+      }) : this.name = name,
+      this.xp = xp,
+      this.team = 'blue';
+  
+  // 간소화된 방법(dart는 간소화된 방법을 추천)
+  Player.createRed({
+      required this.name,
+      required this.xp,
+      this.team = 'red',
+      });
+  
+  void main() {
+      var player = Player.createBlue(
+      name: "nico",
+      age: 21,
+      );
+  }
+  
+  ✅ positional parameters
+  // 일반적인 방법
+  Player.createRed(String name, int xp)
+      : this.name = name,
+      this.xp = xp,
+      this.team = 'red';
+  
+  // 간소화된 방법
+  Player.createRed(
+      this.name,
+      this.xp,
+      [this.team = 'red']
+      );
+  
+  void main() {
+      var player = Player.createRed("nico", 21);
+  }
+  ```
+
+  
