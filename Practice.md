@@ -10,7 +10,7 @@ Dart의 컴파일러 기술을 사용하면 다양한 방식으로 코드를 실
 
 https://dart.dev/overview
 
-## How To Learn
+## How To Learn 
 
 https://dartpad.dev << 들어가서 하거나
 
@@ -407,7 +407,7 @@ String sayHello(String name, int age, [String? country = ""]
 
 ### Named Constructor
 
-- 편의 문법이 존재
+- 편의 문법이 존재.
 
   ```dart
   ✅ Named parameters
