@@ -24,7 +24,7 @@ https://dartpad.dev << 들어가서 하거나
 
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-    ↑↑ 이거 입력 후
+    ↑↑ 이거 입력 후.
 
     choco install dart-sdk
 
