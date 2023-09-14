@@ -453,3 +453,23 @@ String sayHello(String name, int age, [String? country = ""]
   ```
 
   
+
+### Cascade Notation
+
+```dart
+void main(){
+    var jisoung = Player(name: "jisoung", age: 17, description: "Happy code is end coding");
+    jisoung.name = "nico";
+    jisoung = 20;
+    jisoung.description = "Best Project is End Project";
+}
+// 위의 반복되는 것을 아래처럼 바꿀수 있다 간략하게
+void main(){
+    var jisoung = Player(name: "jisoung", age: 17, description: "Happy code is end coding");
+    ...name = "nico"
+    ..age = 20
+    ..description = "Best Project is End Project";
+    ..sayhello(); 
+}
+```
+
