@@ -473,3 +473,29 @@ void main(){
 }
 ```
 
+### Enum
+
+```dart
+// enum은 우리가 실수하지 않도록 도와주는 타입
+enum Team { red, blue }
+class Player {
+    String name;
+    int age;
+    Team team;
+
+    Player({
+    required this.name,
+    required this.age,
+    required this.team,
+    });
+}
+void main(){
+    var jisoung = Player(name: "jisoung", age: 17, team: Team.red);
+    var sushi = jisoung
+    ..name = "sushi"
+    ..age = 12
+    ..team = Team.blue;
+}
+
+```
+
