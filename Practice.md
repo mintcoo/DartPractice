@@ -499,3 +499,20 @@ void main(){
 
 ```
 
+### Abstract Classes
+
+```dart
+abstract class Human {
+	void walk();
+}
+
+// extends를 이용해 상속, 확장을 할 수 있다.
+// 상속받은 class는 walk 라는 메서드를 반드시 포함해야한다
+	
+class Player extends Human {
+    void walk(){
+    	print("working!");
+    }
+}
+```
+
