@@ -516,4 +516,36 @@ class Player extends Human {
 }
 ```
 
-..
+## Inheritance
+
+```dart
+class Human {
+    final String name;
+    Human(this.name); // 호출 받는다.
+    void sayHello(){
+    print("Hello! $name");}
+}	
+
+class Player extends Human {
+    Player({
+        required this.team,
+        required String name
+    }) : super(name: name);
+    // Human의 생성자 함수를 호출한다.
+}
+
+@override를 이용해 부모 클래스의 객체를 받아올 수 있다.
+@override
+void sayHello(){
+super.sayHello();
+}
+```
+
+## Mixins
+
+```dart
+//생성자가 없는 클래스를 만들면 된다
+// 버전업데이트로 바뀐듯
+`class Tall {}`을 `mixin Tall {}`이나 `mixin class Tall {}` 이런식으로 쓰면된다
+```
+
